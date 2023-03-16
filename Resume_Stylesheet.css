@@ -1,38 +1,280 @@
-<style>      
-.grid-wrapper {
-    /* apply css grid to any block-level element that has this class */
-    display: grid;
-
-
-    /* set width of columns and by default the number of columns in the grid*/
-    grid-template-columns: 100px 100px 100px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 
-.grid-item {
-    background-color: black;
-    color: white;
-    border: 1px solid black;
-    padding: 1rem;
+
+
+
+:root {
+  --primary-color: #0ff7eb;
+  --text-color: #727171;
 }
 
 
-.grid-item:nth-child(even) {
-    background-color: white;
-    color: black;
+
+
+
+html {
+  font-size: 10px;
 }
-</style>
-</head>
-<body>
-<section class="grid-wrapper">
-<div class="grid-item">1</div>
-<div class="grid-item">2</div>
-<div class="grid-item">3</div>
-<div class="grid-item">4</div>
-<div class="grid-item">5</div>
-<div class="grid-item">6</div>
-<div class="grid-item">7</div>
-<div class="grid-item">8</div>
-<div class="grid-item">9</div>
-</section>
-</body>
+
+
+
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+
+
+
+/* common styles */
+img {
+  width: 100%;
+  border-radius: 150px;
+}
+
+
+
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+.description {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+
+
+
+body h3{
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+
+
+
+.item_preTitle {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-weight: 300;
+}
+
+
+
+.item_title {
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 500;
+  margin: 0.8rem 0;
+}
+
+
+
+
+.item_subtitle {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+
+/* layouts */
+.container {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  padding: 5rem;
+  background: #070707;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 3rem;
+    gap: 7rem;
+	background-color: bisque;
+  }
+}
+
+
+
+.profile {
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+}
+
+
+
+.group-1,
+.group-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+
+
+
+
+.group-3 {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+
+
+
+.group-3 > div {
+  flex: 1;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .profile {
+    margin-bottom: 0;
+  }
+  .group-3 {
+    flex-direction: column;
+	background-color: bisque;
+  }
+}
+
+/* profile */
+.profile_container {
+  display: flex;
+  gap: 2rem;
+}
+
+
+
+.profile_profileImg {
+  max-width: 250px;
+}
+
+
+
+.profile_name_firstName {
+  color: white;
+  font-weight: 200;
+  font-size: clamp(2rem, 8vw, 4rem);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: -0.8rem;
+  text-shadow: 10px 5px 50px #0ff7eb;
+}
+
+
+
+.profile_name_lastName {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 15vw, 7rem);
+  text-transform: uppercase;
+  display: block;
+  text-shadow: 10px 5px 50px #0ff7eb;
+}
+
+
+
+
+.profile_title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+
+
+
+.ref_name {
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 500;
+  margin: 0.8rem 0;
+}
+
+
+
+
+
+a {
+  color: grey;
+  font-size: medium;
+}
+
+
+
+
+a:hover {
+  color: orangered;
+  letter-spacing: 0.1em;
+  transition: 1s;
+}
+
+
+
+
+
+.objective{
+	padding-top: 60px;
+}
+
+
+footer{
+	
+	background-color: black;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border:15px solid grey;
+	border-radius: 10px;
+}
+
+
+.social_items li{
+	list-style: none;
+	
+}
+
+
+.downloadBtn {
+	display: block;
+	text-decoration: underline;
+	font-size: 1.6rem;
+	margin-top: 1rem;
+}
+
+
